@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="profile.jpg">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="My Portfolio Logo" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I’m <span>Jewel Anne Keith E. Peleño</span></h1>
+      <p>3<sup>rd</sup> Year BSIT Web and Mobile Application Development</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="profile.jpg" alt="Profile" class="profile-pic">
+      <div class="about-text">
+        <p>I am a beginner Web Developer who is continuously learning and exploring the fundamentals of web development. With a foundation in HTML, CSS, and JavaScript, I am eager to expand my skills and gain hands-on experience through real projects. My goal is to grow into a versatile developer who can contribute to creating meaningful and user-friendly web solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>My Projects</h2>
+    <div class="portfolio-grid">
+      <div class="card" onclick="openModal('project1.jpg')">
+        <p>LSPU Online Job App</p>
+      </div>
+      <div class="card" onclick="openModal('project2.jpg')">
+        <p>Project 2</p>
+      </div>
+      <div class="card" onclick="openModal('project3.jpg')">
+        <p>Project 3</p>
+      </div>
+      <div class="card" onclick="openModal('project4.jpg')">
+        <p>Project 4</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <p>© 2025 My Portfolio | Email: pelenojewel@gmail.com | Phone: 0966-418-8187</p>
+  </footer>
+
+    <!-- Scroll to Top Button -->
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
+
+  <script>
+    // Show button only when user scrolls down
+    window.onscroll = function() { toggleScrollBtn() };
+
+    function toggleScrollBtn() {
+      let btn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>
